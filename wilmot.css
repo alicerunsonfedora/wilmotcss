@@ -3,53 +3,17 @@
     A CSS stylesheet with class, inspired by Riot.im (https://riot.im)
     © 2019 Marquis Kurt. All rights reserved.
 */
-
-/* Import fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Nunito');
 
-/* Basic properties of the HTML document (size, font smoothing) */
 html, body {
     font-family: 'Merriweather', 'Times New Roman', Times, serif;
     height: 100%;
     min-height: 100%;
+    margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Classes for Paper */
-.paper {
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-bottom: 25%;
-}
-
-/** 
-    Classes for controlling the header of the paper.
-    This only affects the title and subtitle as they are separate
-    from the actual paper so that it doesn't break Reader Mode
-    on Safari.
-*/
-.paper-margins {
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-top: 10%;
-    font-family: "Nunito", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-/**
-   This class doesn't render, but is important to keep
-   compatibility with Safari's Reader mode. 
- */
-.paper .meta {
-    display: none;
-}
-
-/* All subheaders in the paper that aren't the subtitle */
-.paper h2:not(.subtitle) {
-    margin-top: 64px;
-}
-
-/* All hyperlinks that aren't buttons or section headers */
 a:not(a[name]):not(.button) {
     text-decoration: none;
     color: #368bd6;
@@ -60,7 +24,104 @@ a:not(a[name]):not(.button):hover {
     color: #5ea2de;
 }
 
-/* Sections */
+footer {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: #f4f4f4;
+}
+
+footer p {
+    font-size: 0.75em;
+}
+
+.navbar {
+    height: 76px;
+    width: 100%;
+    background-color: #f4f4f4;
+    border-bottom-color: #999999;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+.navbar .navbar-flex {
+    padding-left: 15%;
+    padding-right: 15%;
+    display: flex;
+    
+}
+
+.navbar .title {
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    flex-grow: 1;
+    height: 100%;
+    line-height: 76px;
+}
+
+.navbar .title a {
+    font-size: 2em;
+    display: inline-block;
+    vertical-align: middle;
+    color: black;
+}
+
+.navbar .links {
+    display: inline-flex;
+    list-style: none;
+    line-height: 38px;
+}
+
+.navbar .links .link {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.jumbotron {
+    margin: 0;
+    padding-top: 12%;
+    padding-bottom: 10%;
+    padding-left: 7%;
+    padding-right: 7%;
+    text-align: center;
+    background-color: #f4f4f4;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.jumbotron .title {
+    font-size: 3em;
+}
+
+.jumbotron .subtitle {
+    font-size: 1em;
+    color: #333;
+}
+
+.jumbotron .buttons {
+    margin-top: 16px;
+}
+
+.paper {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 25%;
+}
+
+.paper-margins {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 10%;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.paper .meta {
+    display: none;
+}
+
+.paper h2:not(.subtitle) {
+    margin-top: 64px;
+}
+
 .paper section {
     margin-top: 24px;
     margin-bottom: 24px;
@@ -78,7 +139,6 @@ a:not(a[name]):not(.button):hover {
     box-shadow: 0 0 4px #999;
 }
 
-/* All captions that aren't in see-also */
 .paper section .caption:not(section.see-also .caption) {
     font-size: 0.95em;
     font-family: "Nunito", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -86,7 +146,6 @@ a:not(a[name]):not(.button):hover {
     padding-bottom: 24px;
 }
 
-/* See Also section */
 .paper section.see-also {
     padding-top: 8px;
     padding-bottom: 8px;
@@ -112,7 +171,6 @@ a:not(a[name]):not(.button):hover {
     opacity: 0.8;
 }
 
-/* Sources section */
 .paper section.sources {
     margin-top: 64px;
     word-wrap: break-word;
@@ -124,7 +182,6 @@ a:not(a[name]):not(.button):hover {
     word-wrap: break-word;
 }
 
-/* Paper blockquotes */
 .paper section blockquote {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -139,21 +196,19 @@ a:not(a[name]):not(.button):hover {
     border-left-style: solid;
 }
 
-/* Paper buttons */
-.paper section .buttons {
+.buttons {
     display: inline-block;
     text-align: center;
     margin-bottom: 24px;
     width: 100%;
 }
 
-/* Make buttons take up whole width of the paper */
-.paper section .buttons.fullwidth {
+.buttons.fullwidth {
     display: flex;
     text-align: center;
 }
 
-.paper section .button {
+.button {
     background-color: #03b381;
     color: #fff;
     border-radius: 4px;
@@ -169,21 +224,18 @@ a:not(a[name]):not(.button):hover {
     margin-right: 4px;
 }
 
-.paper section .button:hover {
+.button:hover {
     background-color: #35C29A;
 }
 
-/* Make the button full width */
-.paper section .button.fullwidth {
+.button.fullwidth {
     width: 100% !important;
 }
 
-/* Specific header fonts*/
 .paper h1, .paper h2, .paper h3, .paper h4, .paper h5, .paper h6 {
     font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* Colors for titles and subtitles */
 .paper-margins .title {
     color: #000;
 }
@@ -193,28 +245,29 @@ a:not(a[name]):not(.button):hover {
     line-height: 0.5em;
 }
 
-/* Paper on smaller devices (eg. phones and tablets) */
-@media (max-width: 768px) {
-    .paper {
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-top: 32px;
-        padding-bottom: 32px;
-    }
-}
-
-/**
-    Paper on devices that are using dark mode.
-    This uses the new prefers-color-scheme query, which
-    might not be supported in all browsers yet.
-
-    Confirmed: works on Safari 12.1+ in macOS Mojave or
-    higher
-*/
 @media (prefers-color-scheme: dark) {
     html, body {
         background-color: #181b21;
         color: #edf3ff;
+    }
+
+    .navbar {
+        background-color: #22262e;
+        border-bottom-color: #14171c;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+    }
+
+    .navbar title a {
+        color: white;
+    }
+
+    .jumbotron {
+        background-color: #22262e;
+    }
+
+    .jumbotron .subtitle {
+        color: #999999;
     }
 
     .paper-margins .title {
@@ -243,46 +296,73 @@ a:not(a[name]):not(.button):hover {
         padding-left: 20px;
         padding-right: 20px;
     }
-}
 
-/* Footer */
-footer {
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-top: 16px;
-    padding-bottom: 16px;
-}
-
-footer p {
-    font-size: 0.75em;
-}
-
-/* Footer on smaller devices (eg. phones and tablets) */
-@media (max-width: 768px) {
     footer {
-        padding-left: 8px;
-        padding-right: 8px;
-        padding-top: 16px;
-        padding-bottom: 16px;
+        background-color: #22262e;
     }
 }
 
-/** 
-    Button container on smaller devices (eg. phones and tablets).
-    This fixes any potential quirks with possible button overlaps.
-*/
 @media (max-width: 768px) {
+
+    .navbar {
+        height: auto;
+        display: block;
+    }
+
+    .navbar .navbar-flex {
+        padding-left: 5%;
+        padding-right: 5%;
+        display: block;
+    }
+
+    .navbar .title {
+        height: 80%;
+        line-height: 64px;
+    }
+
+    /* .mobileMenu {
+        display: none;
+    } */
+
+    .mobileMenuButton {
+        color: #666;
+        border-style: solid;
+        border-width: 2px;
+        width: 64px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        border-radius: 4px;
+    }
+
+    .navbar .links {
+        display: block;
+        line-height: 36px;
+        padding-left: 0;
+    }
+
+    .navbar .links .link {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .paper {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 8px;
+        padding-bottom: 32px;
+    }
+
+    footer {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
     .paper section .buttons {
         display: inline-flex;
         text-align: center;
         margin-bottom: 24px;
         width: 100%;
     }
-}
-
-/* GitHub banner */
-.github {
-    position: absolute;
-    top: 0;
-    right: 0;
 }
