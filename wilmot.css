@@ -228,10 +228,9 @@ hr {
 }
 
 .buttons {
-    display: inline-block;
+    display: inline-flex;
     text-align: center;
     margin-bottom: 24px;
-    width: 100%;
 }
 
 .buttons.fullwidth {
