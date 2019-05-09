@@ -4,6 +4,7 @@
     © 2019 Marquis Kurt. All rights reserved.
 */
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Nunito');
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
 
 html, body {
     font-family: 'Merriweather', 'Times New Roman', Times, serif;
@@ -34,6 +35,12 @@ footer {
 
 footer p {
     font-size: 0.75em;
+}
+
+hr {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    opacity: 0.75;
 }
 
 .navbar {
@@ -133,6 +140,27 @@ footer p {
 .paper section p {
     line-height: 2.0em;
     font-size: calc(12pt + 5%);
+}
+
+.paper section code {
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 1.05em;
+}
+
+.paper section pre {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    background-color: #f4f4f4;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 48px;
+    padding-right: 8px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.paper section ul li {
+    line-height: 2.0em;
 }
 
 .paper section img {
@@ -281,6 +309,14 @@ footer p {
         color: #999;
     }
 
+    .paper section pre {
+        background-color: #22262e;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 48px;
+        padding-right: 8px;
+    }
+
     .paper section blockquote {
         background-color: #22262e;
         margin-left: 0;
@@ -342,6 +378,8 @@ footer p {
         width: 100%;
         text-align: center;
         display: block;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 
     .navbar .links {
@@ -362,6 +400,11 @@ footer p {
         padding-bottom: 32px;
     }
 
+    .paper section pre code {
+        font-family: 'Fira Code', 'Courier New', Courier, monospace;
+        font-size: 0.75em;
+    }
+
     footer {
         padding-left: 16px;
         padding-right: 16px;
@@ -375,4 +418,13 @@ footer p {
         margin-bottom: 24px;
         width: 100%;
     }
+}
+
+@media (min-width: 1024px) {
+
+    .jumbotron {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
 }
