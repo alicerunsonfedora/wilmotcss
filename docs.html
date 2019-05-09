@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wilmot CSS Documentation</title>
+        <link rel="stylesheet" href="wilmot.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <nav class="navbar">
+        <div class="navbar-flex">
+            <div class="title">
+                <a href="/index.html">Wilmot</a>
+            </div>
+            <div class="mobileMenuButton" onclick="toggleMobileMenu()">More</div>
+            <div id="mobile-menu" class="mobileMenu">
+                <ul class="links">
+                    <li class="link"><a href="/index.html">Home</a></li>
+                    <li class="link"><a href="/docs.html">Docs</a></li>
+                    <li class="link"><a href="https://github.com/alicerunsonfedora/wilmotcss">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <body>
+        <article class="paper">
+            <h1>Writing a Site with Wilmot</h1>
+            <section>
+                <p>
+                    Wilmot.css has been designed to make it easier to write your website without needing to apply classes everywhere so that developers and readers can focus on making their site, blog post, or paper without needing to worry too much about styling. It is also intended as an easy styesheet to use for those learning the basics of HTML, CSS, and JavaScript.
+                </p>
+                <p>
+                    If you are new to creating websites, I recommend checking out the guides and tutorials from Mozilla Developer Network. They offer a great start and will help you get the hang of creating your own sites, as well as understanding how Wilmot works to make your site look good.
+                </p>
+            </section>
+            <a name="see-also-example"></a>
+            <section class="see-also">
+                <h3 class="title">See also: Learn web development (Mozilla Developer Network)</h3>
+                <img src="./site/mozilla.png" alt="The lwarn web development page from MDN"/>
+                <p class="caption">The Mozilla Developer Network is a site maitained by Mozilla, the company that makes Firefox, that aims to be a central source for learning how to code your own websites.</p>
+                <div class="buttons">
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn" rel="noopener nofollower noreferrer" class="button">Visit now</a>
+                </div>
+            </section>
+            <a name="creating-a-navbar">
+                <h2>Creating a navigation bar</h2>
+            </a>
+            <section>
+                <p>
+                    The navigation bar (navbar) is one of the major components of any website using Wilmot. It usually contains links to other parts of a site and displays the site's title.
+                </p>
+                <p>
+                    To create a navbar in Wilmot, we make use of the <code>nav</code> element, responsible for creating navigation sections in HTML. While it is possible to use the appropriate classes in other elements, I recommend using the <code>nav</code> element to keep things clean.
+                </p>
+                <pre>
+                    <code>
+                        &lt;nav class="navbar"><br/>
+                            &lt;div class="navbar-flex"><br/>
+                                &nbsp;&lt;div class="title"><br/>
+                                &nbsp;&nbsp;&lt;a href="/index.html">Wilmot&lt;/a><br/>
+                                &nbsp;&lt;/div><br/>
+                                &nbsp;&lt;div class="mobileMenuButton" onclick="toggleMobileMenu()">More&lt;/div><br/>
+                                &nbsp;&lt;div id="mobile-menu" class="mobileMenu"><br/>
+                                &nbsp;&nbsp;&nbsp;&lt;ul class="links"><br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="link">&lt;a href="/index.html">Home&lt;/a>&lt;/li><br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="link">&lt;a href="/docs.html">Docs&lt;/a>&lt;/li><br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="link">&lt;a href="https://github.com/alicerunsonfedora/wilmotcss">GitHub&lt;/a>&lt;/li><br/>
+                                    &nbsp;&nbsp;&nbsp;&lt;/ul><br/>
+                                    &nbsp;&nbsp;&lt;/div><br/>
+                                    &nbsp;&lt;/div><br/>
+                        &lt;/nav>
+                    </code>
+                </pre>
+            </section>
+            <a name="creating-a-jumbotron">
+                <h2>Creating a jumbotron</h2>
+            </a>
+            <section>
+                <p>
+                    The jumbotron is a huge section of a website that introduces a topic or requires attention. In Wilmot, the jumbotron consists of a title and content (buttons that link elsewhere are optional).
+                </p>
+                <p>
+                    <img src="./site/jumbotron.png" alt="The jumbotron on the Wilmot homepage"/>
+                    <h6 class="caption">The jumbotron on the main Wilmot site</h6>
+                </p>
+                <p>
+                    Defining a jumbotron inside of Wilmot is extremely easy and can be done inside of the <code>body</code> of your HTML:
+                </p>
+                <pre>
+                    <code>
+                        &lt;div class="jumbotron"><br/>
+                        &nbsp;&lt;h1 class="title">...&lt;/h1><br/>
+                        &nbsp;&lt;p class="content">...&lt;/p><br/>
+                        &nbsp;&lt;div class="buttons"><br/>
+                        &nbsp;&nbsp;&nbsp;...<br/>
+                        &nbsp;&lt;/div><br/>
+                        &lt;/div><br/>
+                    </code>
+                </pre>
+                <p>
+                    Keep in mind that you should only have one jumbotron per page so that your readers and viewers aren't bombarded with information.
+                </p>
+            </section>
+            <a name="writing-content">
+                <h2>Adding your site's content</h2>
+            </a>
+            <section>
+                <p>
+                    Writing content is relatively straightforward in Wilmot and shouldn't be style-filled like the other components. Rather, most styles will be inherited from the main content.
+                </p>
+                <p>
+                    I recommend using the <code>article</code> element to hold your main content so that Reader Mode will work correctly on your site without difficulty. However, you can use any element you'd like to contain your site's content.
+                </p>
+                <p>
+                    To apply the content style, use the <code>paper</code> class on your containing element:
+                </p>
+                <pre>
+                    <code>
+                        &lt;article class="paper"><br/>
+                        &nbsp;...<br/>
+                        &lt;/article>
+                    </code>
+                </pre>
+                <p>
+                    Building up your site from here should be straightforward, but keep the following in mind:
+                </p>
+                <p>
+                    <ul>
+                        <li>Sections of your paper should be stored in the <code>section</code> element to continue applying styles.</li>
+                        <li>Images will take up 100% width of the paper container.</li>
+                        <li>To add a caption to go with an image, apply the <code>caption</code> class.</li>
+                        <li>Both the <code>pre</code> and <code>blockquote</code> elements have styles to stand out from most content. Don't be afraid to use them when necessary!</li>
+                        <li>The overall website makes use of both light and dark mode, so make sure your site can work with both variants of Wilmot.css</li>
+                    </ul>
+                </p>
+            </section>
+            <a name="buttons">
+                <h3>Adding buttons</h3>
+            </a>
+            <section>
+                <p>
+                    To make a button in Wilmot, just apply the <code>button</code> class to your element. I recommend using this with links when needed:
+                </p>
+                <pre>
+                    <code>
+                        &lt;a href="..." class="button">Click me&lt;/a>
+                    </code>
+                </pre>
+                <br/>
+                <div class="buttons">
+                    <a class="button">Click me</a>
+                </div>
+                <br/>
+                <p>
+                    If you want your buttons to be in the center of the page, create a container for them with the <code>buttons</code> class:
+                </p>
+                <pre>
+                    <code>
+                        &lt;div class="buttons">...&lt;/div>
+                    </code>
+                </pre>
+                <br/>
+                <div class="buttons">
+                    <a class="button">Click me</a>
+                    <a class="button">Please don't click me</a>
+                    <a class="button" onclick="alert('Oh, you clicked on me!')">No, click me!</a>
+                </div>
+                <p>
+                    If you want the buttons to take up the same width as an image, add the <code>fullwidth</code> class to both the button container and the buttons.
+                </p>
+                <br/>
+                <div class="buttons fullwidth">
+                    <a class="button fullwidth">I'm a big boi</a>
+                </div>
+            </section>
+            <br/>
+            <a name="academic-sources">
+                <h3>Academic sources</h3>
+                <section>
+                    <p>
+                        If you are using Wilmot to present an academic paper, there are classes you can use to format your bibliography so that it uses the hanging indent. Doing this is very similar to how links in the navbar are handled:
+                    </p>
+                    <pre>
+                        <code>
+                            &lt;section class="sources"><br/>
+                            &nbsp;&lt;p class="source">...&lt;/p><br/>
+                            &nbsp;&lt;p class="source">...&lt;/p><br/>
+                            &nbsp;&lt;p class="source">...&lt;/p><br/>
+                            &lt;/section>
+                        </code>
+                    </pre>
+                    <section class="sources"><br/>
+                        <p class="source">Hodgson, Matthew. 2019. “Matrix in the French State.” presented at the FOSSDEM, ULB Solbosch Campus, February 2. https://fosdem.org/2019/schedule/event/matrix_french_state/.</p>
+                    </section>
+                    <br/>
+                    <a name="see-alsos">
+                        <h3>See also content</h3>
+                    </a>
+                    <section>
+                        <p>
+                            For papers or sites that want to direct readers' attentions to external content when necessary, Wilmot comes with a "see-also" section.
+                        </p>
+                        <pre>
+                            <code>
+                                &lt;section class="see-also"><br/>
+                                &nbsp;&lt;h3 class="title">See also: Learn web development (Mozilla Developer Network)&lt;/h3><br/>
+                                &nbsp;&lt;img src="./site/mozilla.png" alt="The lwarn web development page from MDN"/><br/>
+                                &nbsp;&lt;p class="caption">The Mozilla Developer Network is a site maitained by Mozilla, the company that makes Firefox, that aims to be a central source for learning how to code your own websites.&lt;/p><br/>
+                                &nbsp;&lt;div class="buttons"><br/>
+                                &nbsp;&nbsp;&lt;a href="https://developer.mozilla.org/en-US/docs/Learn" rel="noopener nofollower noreferrer" class="button">Visit now&lt;/a><br/>
+                                &nbsp;&lt;/div><br/>
+                                &lt;/section>
+                            </code>
+                        </pre>
+                        <br/>
+                        <div class="buttons">
+                            <a href="#see-also-example" class="button">View see also example</a>
+                        </div>
+                    </section>
+                    <a name="help">
+                        <h2>Where to go for help</h2>
+                    </a>
+                    <section>
+                        <p>
+                            If you need help with using Wilmot.css, feel free to take a look at this documentation page on GitHub or file an issue.
+                        </p>
+                        <p>
+                            If all else fails, feel free to <a href="mailto:support@marquiskurt.net">email me</a>.
+                        </p>
+                        <br/>
+                        <div class="buttons">
+                            <a class = "button" href="https://github.com/alicerunsonfedora/wilmotcss/blob/master/docs.html">View docs page source</a>
+                            <a class = "button" href="https://gituhb.com/alicerunsonfedora/wilmotcss/issues">File an issue</a>
+                        </div>
+                    </section>
+                </section>
+            </a>
+        </article>
+        <script src="wilmot.js"></script>
+    </body>
+    <footer>
+        <p>&copy; 2019 Marquis Kurt. Licensed under MIT.</p>
+    </footer>
+</html>
